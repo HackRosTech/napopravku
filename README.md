@@ -30,9 +30,6 @@
 # Качаем зависимости
 $ composer install
 
-# Качаем sail
-$ php artisan sail:install
-
 # Поднимаем контейнеры
 $ ./vendor/bin/sail up
 
