@@ -48,7 +48,7 @@ class MainController extends Controller
      * @param FileRequest $request
      * @return JsonResponse
      */
-    public function upload(FileRequest $request)
+    public function upload(FileRequest $request): JsonResponse
     {
         $file = $this->service->file(
             file: $request->file('file'),
