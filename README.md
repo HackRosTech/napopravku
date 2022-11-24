@@ -24,17 +24,22 @@
 
 ## Как скачать
 
-Переходим в .env файл, указываем бд и порт
+Копируем env.example в корен и переменовываем в .env, указываем тип бд и если нужно порт, в APP_URL вписываем хост
+сайта.
+И запускаем следущие команды:
 ```bash
+# Качаем зависимости
+$ composer install
+
+# Качаем sail
+$ php artisan sail:install
+
 # Поднимаем контейнеры
 $ ./vendor/bin/sail up
 
-# Go into the repository
-$ cd electron-markdownify
+# Запускаем миграции
+$ ./vendor/bin/sail artisan migrate
 
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
+# Линкуем папки
+$ ./vendor/bin/sail artisan storage:link
 ```
