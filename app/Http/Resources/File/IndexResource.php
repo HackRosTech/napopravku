@@ -24,6 +24,7 @@ class IndexResource extends JsonResource
             'disk' => $this->disk,
             'collection' => $this->collection,
             'directory' => new \App\Http\Resources\Directory\IndexResource($this->directory),
+            'file_retention_period_at' => $this->file_retention_period_at,
         ];
     }
 }
