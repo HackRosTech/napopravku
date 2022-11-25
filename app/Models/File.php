@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-use JetBrains\PhpStorm\ArrayShape;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class File extends Model
 {
@@ -37,5 +39,24 @@ class File extends Model
     public function links(): HasOne
     {
         return $this->hasOne(FileLink::class);
+    }
+
+    public function scopeSumSizeInDirectory(int $id): Model|Builder
+    {
+        return $this
+            ->select( DB::raw('SUM(size) as size'))
+            ->where('directory_id', $id)
+            ->where('user_id', Auth::id())
+            ->groupBy('size')
+            ->firstOrFail();
+    }
+
+    public function scopeSumSizeOnDisk(): Model|Builder
+    {
+        return $this
+            ->select( DB::raw('SUM(size) as size'))
+            ->where('user_id', Auth::id())
+            ->groupBy('size')
+            ->firstOrFail();
     }
 }

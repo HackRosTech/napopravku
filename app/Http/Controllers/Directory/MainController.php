@@ -8,6 +8,7 @@ use App\Http\Resources\Directory\CreateResource;
 use App\Models\Directory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
@@ -19,7 +20,10 @@ class MainController extends Controller
      */
     public function create(CreateRequest $request): JsonResponse
     {
-        $directory = Directory::create($request->only('title'));
+        $directory = Directory::create([
+            'title' => $request->input('title'),
+            'user_id' => Auth::id(),
+        ]);
 
         return response()
             ->json(new CreateResource($directory));

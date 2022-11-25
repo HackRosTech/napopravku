@@ -130,12 +130,7 @@ class MainController extends Controller
      */
     public function sizeFilesInDirectory(int $id): JsonResponse
     {
-        $size = File::query()
-            ->select( DB::raw('SUM(size) as size'))
-            ->where('directory_id', $id)
-            ->where('user_id', Auth::id())
-            ->groupBy('size')
-            ->firstOrFail();
+        $size = File::sumSizeInDirectory();
 
         return response()
             ->json(new SizeFileInDirectoryResource($size));
@@ -148,11 +143,7 @@ class MainController extends Controller
      */
     public function sizeFilesOnDisk(): JsonResponse
     {
-        $size = File::query()
-            ->select( DB::raw('SUM(size) as size'))
-            ->where('user_id', Auth::id())
-            ->groupBy('size')
-            ->firstOrFail();
+        $size = File::sumSizeOnDisk();
 
         return response()
             ->json(new SizeFileOnDiscResource($size));

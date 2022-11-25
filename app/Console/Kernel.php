@@ -27,7 +27,7 @@ class Kernel extends ConsoleKernel
             }
 
             $files->delete();
-        })->daily();
+        })->everyMinute();
     }
 
     /**

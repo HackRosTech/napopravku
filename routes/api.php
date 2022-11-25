@@ -13,7 +13,8 @@ Route::group([
     'middleware' => 'auth:sanctum',
     'prefix' => 'file'
 ], function () {
-    Route::post('upload', [\App\Http\Controllers\File\MainController::class, 'upload'])->middleware('checksize');
+    Route::post('upload', [\App\Http\Controllers\File\MainController::class, 'upload'])
+        ->middleware(['checkSize', 'checkDirectory']);
     Route::get('index', [\App\Http\Controllers\File\MainController::class, 'index']);
     Route::patch('rename/{id}', [\App\Http\Controllers\File\MainController::class, 'rename']);
     Route::get('download/{id}', [\App\Http\Controllers\File\MainController::class, 'download']);
