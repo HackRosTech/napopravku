@@ -16,10 +16,10 @@ Route::group([
     Route::post('upload', [\App\Http\Controllers\File\MainController::class, 'upload'])->middleware('checksize');
     Route::get('index', [\App\Http\Controllers\File\MainController::class, 'index']);
     Route::patch('rename/{id}', [\App\Http\Controllers\File\MainController::class, 'rename']);
-    Route::delete('delete/{id}', [\App\Http\Controllers\File\MainController::class, 'destroy']);
     Route::get('download/{id}', [\App\Http\Controllers\File\MainController::class, 'download']);
     Route::get('size-in-directory/{id}', [\App\Http\Controllers\File\MainController::class, 'sizeFilesInDirectory']);
     Route::get('size-on-disk', [\App\Http\Controllers\File\MainController::class, 'sizeFilesOnDisk']);
+    Route::delete('delete/{id}', [\App\Http\Controllers\File\MainController::class, 'destroy']);
 });
 
 Route::post('/file/links/{id}', [\App\Http\Controllers\File\FileLinkController::class, 'store'])->middleware('auth:sanctum');

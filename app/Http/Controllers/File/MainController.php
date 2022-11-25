@@ -11,8 +11,6 @@ use App\Http\Resources\File\SizeFileOnDiscResource;
 use App\Http\Resources\User\UploadResource;
 use App\Models\File;
 use App\Services\File\Contracts\UploadServiceContract;
-use App\Services\File\UploadService;
-use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -23,7 +21,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class MainController extends Controller
 {
-    public function __construct(private readonly UploadService $service) {}
+    public function __construct(private readonly UploadServiceContract $service) {}
 
     /**
      * Список всех файлов текущего пользователя
