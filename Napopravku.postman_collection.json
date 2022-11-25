@@ -1,0 +1,656 @@
+{
+	"info": {
+		"_postman_id": "f68fdd6f-5eec-4a7e-a8a9-257c1aa0ff6c",
+		"name": "Napopravku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19779860"
+	},
+	"item": [
+		{
+			"name": "CSRF-COOKIE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://62.217.178.207/sanctum/csrf-cookie",
+					"protocol": "http",
+					"host": [
+						"62",
+						"217",
+						"178",
+						"207"
+					],
+					"path": [
+						"sanctum",
+						"csrf-cookie"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "eyJpdiI6IndFUDZCbityMVRKS0huemw0RDkzWVE9PSIsInZhbHVlIjoiMm55c09SRkVpZURBOVlVNmVWSEF1c2ZCUmFNU096MVFuQ3RSekJCR0VLcEFFMFR6R3dmTjUwNmg4dldiZ0NibGNMNEEwa0Q4S00vRE1vdCtzK0pMTm1ybjBaeDlicmdDek81UkFETFE2UllEemFMZ3F0N05heHpPeFBnbTBVZEQiLCJtYWMiOiI4N2IwYzc0M2RjMDY2ZDY3YzFkODE1NDI4MjY5MWQxMmUyODNlZDIwMzlhYjM0ZTE0MDQyOTQzM2I1ZWMzN2IyIiwidGFnIjoiIn0",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "127.0.0.1:8000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "TestUser7",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "TestUser7@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "TestUser7",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "TestUser7",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://62.217.178.207/register",
+					"protocol": "http",
+					"host": [
+						"62",
+						"217",
+						"178",
+						"207"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "eyJpdiI6Ik93OUNiUGZ5QkVBandtdVY5clVuZXc9PSIsInZhbHVlIjoiOUZHWWc0TTVNVzdWaG8wcGlMTmNWQU0yWTZic3lwYmNDeXNodzhpYk1XVVFBa1BmZ1d5V2V1UVZ0WkdwOEo1NjdLNk5DMGtKY2k0eXV1d2VOMnNMU0JlVmRIcWNrdElrUHRnVGI1RG1oVWNiYldzeWpkbWhWZVFaL1FwbnhpVHIiLCJtYWMiOiJkMDZiNzE4MTZhYTE5MzdmYjU2YzU1MzNhYmQ3NTg5MzY1MDVjZmIzN2IxNDhhYWQ1Yzg3Yjc1NjNkODRmYmRkIiwidGFnIjoiIn0",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "127.0.0.1:8000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://62.217.178.207/login?email=TestUser7@gmail.com&password=TestUser7",
+					"protocol": "http",
+					"host": [
+						"62",
+						"217",
+						"178",
+						"207"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "TestUser7@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "TestUser7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create directory",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "eyJpdiI6IlQ0VTEvTGFjdHVTRGI3Zzg0ekpTNFE9PSIsInZhbHVlIjoiQk52ZkljTVFtOGxsVWM5TzlkdHgrSjJxU3RSOGhLNkxlNHZzeG13dDNmZ0pTK1BNQTdjR3BSNVlKbnEvOTFCVm04c2Q5UTFRNVdieEJ5YWZvelJYbHFpRnpnbWtUbkozU3hwMG4wSlJYaFV0Y0duZnp2TnB5TnJ4R3p6SC9CejgiLCJtYWMiOiJlMmYyNDRlNDkxNDNjOTVhYjE2MThkNzRjYjE3M2FkOTI3NDEyYTBkMjA1MGUzMjBmMjdhMTlkMzRiOTY3MzEyIiwidGFnIjoiIn0",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "127.0.0.1:8000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "dir2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://62.217.178.207/api/directory/create",
+					"protocol": "http",
+					"host": [
+						"62",
+						"217",
+						"178",
+						"207"
+					],
+					"path": [
+						"api",
+						"directory",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "eyJpdiI6IjZtTUJRU0VxSExyamdLcVRuWS9ySHc9PSIsInZhbHVlIjoiTTVlU0FBMGFnNFNmRlhQa21HZUduZmIrbUZwbEJvSG9CNmY5aGpYbHc3a1lWVUJNTE5OZXRVTlZVTk5YYzlYemEzaEhzZTVsRDdybHBPVWFtNkJObDU1L2xWUS9hWThBQXhHZ2pVaHQ3azUybmJBaXlZMFhRMUNYYXNtTWcyLzMiLCJtYWMiOiJiZTIxZGIwYzUyNzYxYWZiMmEzNTZkZGZjZjFmMzQ4OTNjYzEwZjgxZDY4NDgyYmJjMjNhNTZiZmVmYmM5Yjc5IiwidGFnIjoiIn0",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "127.0.0.1:8000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/miran/OneDrive/Изображения/Снимки экрана/Снимок экрана_20221103_101257.png"
+						},
+						{
+							"key": "file_retention_period_at",
+							"value": "2022-11-24 04:04:05",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "directory_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://62.217.178.207/api/file/upload",
+					"protocol": "http",
+					"host": [
+						"62",
+						"217",
+						"178",
+						"207"
+					],
+					"path": [
+						"api",
+						"file",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Index files",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "eyJpdiI6ImI0NEhLdGRTaWRvVXN5VEtCWEhsS1E9PSIsInZhbHVlIjoiRXhQWXZOR25VMVA0endsdzFLQTdYSFIxMmJRbFNrWjhyQ0UzK1d0MUVIbXhBWE1nVzVoNHkwQklHQXdpZks2bVRLWUNwQ1AyQ2pQSE82SVZvT0VnTHlZQURXZGQ4bG5XTmgwS05EYTY5UWFLS21hdXdTOGtUOTh2ckdoVmQ3amUiLCJtYWMiOiI4YTBkYWQ1Njk3MDA0MmU4NTFlMjUwNzhjMjAxNjdmOWI1MzFkNzc1ZmVlNWY3ODU2MjYzYWJkYThmZGRiYjAzIiwidGFnIjoiIn0",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "127.0.0.1:8000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://62.217.178.207/api/file/index",
+					"protocol": "http",
+					"host": [
+						"62",
+						"217",
+						"178",
+						"207"
+					],
+					"path": [
+						"api",
+						"file",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rename",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "eyJpdiI6IndJYStpOFBjQ2pqQmtHOGhHcHQzTlE9PSIsInZhbHVlIjoiSCtwUWtrdklBeXRBRGtXTFlzNGNnaGhVOTJBUFBiTVNGSklObmd5QlhZWEZjV1VYWG85b0NhWkFncnBwanYyWGp3WmdDZFBCaXRxamdROFNJd3NNWVZqQUo3cVlwbmgxQk8zV0NNZUgxeXZHM2wxUmtOMUgwQzZaQWlzRDNQZ3YiLCJtYWMiOiI4NWI2MTQ5M2ViOGZiMGMzYzQ3Zjc4YjI5MGVlMjVhNTc3NzdmOWQxNzk0YjI0NWUyM2IyM2M1OWE4NjYwYTA2IiwidGFnIjoiIn0",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "127.0.0.1:8000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "file_name",
+							"value": "upd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://62.217.178.207/api/file/rename/1",
+					"protocol": "http",
+					"host": [
+						"62",
+						"217",
+						"178",
+						"207"
+					],
+					"path": [
+						"api",
+						"file",
+						"rename",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "eyJpdiI6IndJYStpOFBjQ2pqQmtHOGhHcHQzTlE9PSIsInZhbHVlIjoiSCtwUWtrdklBeXRBRGtXTFlzNGNnaGhVOTJBUFBiTVNGSklObmd5QlhZWEZjV1VYWG85b0NhWkFncnBwanYyWGp3WmdDZFBCaXRxamdROFNJd3NNWVZqQUo3cVlwbmgxQk8zV0NNZUgxeXZHM2wxUmtOMUgwQzZaQWlzRDNQZ3YiLCJtYWMiOiI4NWI2MTQ5M2ViOGZiMGMzYzQ3Zjc4YjI5MGVlMjVhNTc3NzdmOWQxNzk0YjI0NWUyM2IyM2M1OWE4NjYwYTA2IiwidGFnIjoiIn0",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "127.0.0.1:8000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://62.217.178.207/api/file/download/6",
+					"protocol": "http",
+					"host": [
+						"62",
+						"217",
+						"178",
+						"207"
+					],
+					"path": [
+						"api",
+						"file",
+						"download",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Size in dir",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "eyJpdiI6Ik1pb0RHblkvN2ZiNmtZTGZMdVVBNkE9PSIsInZhbHVlIjoiaTMxZmUrY1BmbE5LS0JpVnRjTXVpRXRRWDZ5OXh2bUxkR2VNMmc5RDRlWUh1dStBMDF3SVpDaUJMOEt1bDFvNUs2NmZTWkdHUHp1SU96NEJMck1kS1lucmIzODczdmxZQjVsNjFEbmhabTNUNWpHaUE0Q1dUUkdDV3M0a2JROFciLCJtYWMiOiI4ODRiN2RmY2I2MTMzZjViNzhmODA3OWU2YTRhY2VkMWZjN2QzZjBiMWQ2ZTNkNzNlNDc3NTcwNmI2MjQxOTJjIiwidGFnIjoiIn0",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "127.0.0.1:8000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "directory_id",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://62.217.178.207/api/file/size-in-directory/1",
+					"protocol": "http",
+					"host": [
+						"62",
+						"217",
+						"178",
+						"207"
+					],
+					"path": [
+						"api",
+						"file",
+						"size-in-directory",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Size on disk",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "eyJpdiI6Ilc1aDh2eFEwU0R4SEhISDRvc0ZwdHc9PSIsInZhbHVlIjoibU1wZ0EydGtPOURVTk9LY05HUk9JYVhaUklLY1BhVDBGQWZPbE1DYlVJWHNXTXN4VngvaFJZR3FRRVBxVFI4aE9DMWk1L1JndkNGUDN2Nm9tQVFMVXZLS1pYUEtiRDF1TEw5dDBYRUsxZ0RleGIyMUdRTXV0UFIwT0RUUXFibUUiLCJtYWMiOiJmMTBhNzU3YWZhMWY2MjM2MDVjNTc0MDM4MDljNmFhODk0NTgzMjhiNjgyNmFlMzk3ODZkYzJhYWNjZTg2YTk4IiwidGFnIjoiIn0",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "127.0.0.1:8000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://62.217.178.207/api/file/size-on-disk",
+					"protocol": "http",
+					"host": [
+						"62",
+						"217",
+						"178",
+						"207"
+					],
+					"path": [
+						"api",
+						"file",
+						"size-on-disk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "eyJpdiI6IjhwWVZIMDZENjRnUndsU0FGTFFCOHc9PSIsInZhbHVlIjoiVGFWdTRFUFJwMU91K1J4TXRvcE1YY3loQk1taCtvdHIvUm9wOVF3V1BZQkVmbjZpQzI5Ui9USGpZQ3h4NUhiNS9zUWZBTzlRR3A4V240dFZBUTBGOHQyRFlRMGpOYmhKVzVOV2F5RWpSZ1k2dE5CTmwrRDlhWmszT05rMndyRkkiLCJtYWMiOiJlYjcxY2E5OTI3MDU4MWQ2NDU5ZDE5OTI2OTAyZTBhYjc1ZDZmZWQ3YTJkODc1ZTg3MTIyNWM1Yzc2ZDliZGQwIiwidGFnIjoiIn0",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "127.0.0.1:8000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://62.217.178.207/api/file/delete/6",
+					"protocol": "http",
+					"host": [
+						"62",
+						"217",
+						"178",
+						"207"
+					],
+					"path": [
+						"api",
+						"file",
+						"delete",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "File link",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "eyJpdiI6IjhwWVZIMDZENjRnUndsU0FGTFFCOHc9PSIsInZhbHVlIjoiVGFWdTRFUFJwMU91K1J4TXRvcE1YY3loQk1taCtvdHIvUm9wOVF3V1BZQkVmbjZpQzI5Ui9USGpZQ3h4NUhiNS9zUWZBTzlRR3A4V240dFZBUTBGOHQyRFlRMGpOYmhKVzVOV2F5RWpSZ1k2dE5CTmwrRDlhWmszT05rMndyRkkiLCJtYWMiOiJlYjcxY2E5OTI3MDU4MWQ2NDU5ZDE5OTI2OTAyZTBhYjc1ZDZmZWQ3YTJkODc1ZTg3MTIyNWM1Yzc2ZDliZGQwIiwidGFnIjoiIn0",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "127.0.0.1:8000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://62.217.178.207/api/file/links/8",
+					"protocol": "http",
+					"host": [
+						"62",
+						"217",
+						"178",
+						"207"
+					],
+					"path": [
+						"api",
+						"file",
+						"links",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Public link",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://62.217.178.207/api/file/links/8?token=25cc9679075dc27edce73979c026731438deaa82cfe0d2b43dad660d76670152",
+					"protocol": "http",
+					"host": [
+						"62",
+						"217",
+						"178",
+						"207"
+					],
+					"path": [
+						"api",
+						"file",
+						"links",
+						"8"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "25cc9679075dc27edce73979c026731438deaa82cfe0d2b43dad660d76670152"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
