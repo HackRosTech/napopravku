@@ -33,9 +33,17 @@ $ composer install
 # Поднимаем контейнеры
 $ ./vendor/bin/sail up
 
+# Установка ключа приложения
+$php ./vendor/bin/sail artisan key:generate
+
 # Запускаем миграции
 $ ./vendor/bin/sail artisan migrate
 
 # Линкуем папки
 $ ./vendor/bin/sail artisan storage:link
+
+# Набираем команду
+$ crontab -e
+# и вставляем это
+# * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1 
 ```
