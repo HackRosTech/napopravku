@@ -74,5 +74,5 @@ $ crontab -e
 * GET http://62.217.178.207/api/file/size-on-disk - размер всех файлов на диске
 * DELETE http://62.217.178.207/api/file/delete/{fileID} - удаление файла
 * POST http://62.217.178.207/api/file/links/{fileId} - сделать публичную ссылку на файл
-* GET http://62.217.178.207/api/file/links/8 - получение публичгой ссылки, параметры:
+* GET http://62.217.178.207/api/file/links/{fileId} - получение публичгой ссылки, параметры:
     * token
