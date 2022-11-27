@@ -34,7 +34,7 @@ $ composer install
 $ ./vendor/bin/sail up
 
 # Установка ключа приложения
-$php ./vendor/bin/sail artisan key:generate
+$ php ./vendor/bin/sail artisan key:generate
 
 # Запускаем миграции
 $ ./vendor/bin/sail artisan migrate
@@ -47,3 +47,32 @@ $ crontab -e
 # и вставляем это
 # * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1 
 ```
+## Последовательность
+
+
+
+* GET http://62.217.178.207/sanctum/csrf-cookie - получаем XSRF TOKEN, должен отправляться со всеми запросами
+* POST http://62.217.178.207/register - регистрируем пользователя, параметры:
+    * name 
+    * email 
+    * password 
+    * password_confirmation 
+* POST http://62.217.178.207/login - логинемся, параметры:
+    * email
+    * password
+* POST http://62.217.178.207/api/directory/create - создание директории, параметры:
+    * title
+* POST http://62.217.178.207/api/file/upload - загрузка файла, параметры:
+    * file
+    * file_retention_period_at
+    * directory_id
+* GET http://62.217.178.207/api/file/index - список файлов.
+* PATCH http://62.217.178.207/api/file/rename/{fileID} - переиминовать файл, параметры:
+    * file_name
+* GET http://62.217.178.207/api/file/download/{fileID} - скачивание файла
+* GET http://62.217.178.207/api/file/size-in-directory/{directoryID} - размер всех файлов внутри директории
+* GET http://62.217.178.207/api/file/size-on-disk - размер всех файлов на диске
+* DELETE http://62.217.178.207/api/file/delete/{fileID} - удаление файла
+* POST http://62.217.178.207/api/file/links/{fileId} - сделать публичную ссылку на файл
+* GET http://62.217.178.207/api/file/links/8 - получение публичгой ссылки, параметры:
+    * token
